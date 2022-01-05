@@ -49,16 +49,16 @@ h1 {
   width: 50%;
 }
 .bloc-info .temps {
-  font-size: 40px;
+  font-size: 30px;
 }
 .bloc-info .temps::first-letter {
   text-transform: capitalize;
 }
 .bloc-info .temperature {
-  font-size: 60px;
+  font-size: 40px;
 }
 .bloc-info .localisation {
-  font-size: 40px;
+  font-size: 30px;
   word-wrap: break-word;
 }
 
@@ -66,26 +66,50 @@ h1 {
   grid-area: 3 / 1/ 4/-1;
 }
 .jour-bloc-prevision {
-    grid-area: 4 / 1/ 5/-1;
+  grid-area: 4 / 1/ 5/-1;
 }
-.jour-bloc-prevision, .heure-bloc-prevision {
-    display: grid;
-    grid-template: 100px /repeat(7, 1fr);
-}
-
-.bloc-h, .bloc-j {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    border-top: solid 2px whitesmoke;
-    font-size: 21px;
+.jour-bloc-prevision,
+.heure-bloc-prevision {
+  display: grid;
+  grid-template: 100px / repeat(7, 1fr);
 }
 
-.bloc-h:not(:last-child), .bloc-j:not(:last-child) {
-    border-right: solid 2px whitesmoke;
+.bloc-h,
+.bloc-j {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-top: solid 2px whitesmoke;
+  font-size: 21px;
 }
 
-.bloc-h p, .bloc-j p {
-    margin: 5px;
+.bloc-h:not(:last-child),
+.bloc-j:not(:last-child) {
+  border-right: solid 2px whitesmoke;
+}
+
+.bloc-h p,
+.bloc-j p {
+  margin: 5px;
+}
+
+.overlay-icone-chargement {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgb(66, 66, 66), black);
+    transition: opacity 1s ease-out;
+    z-index: 1000;
+}
+
+.overlay-icone-chargement img {
+    width: 150px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.disparition {
+    opacity : 0;
 }
